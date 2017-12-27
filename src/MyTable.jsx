@@ -7,7 +7,15 @@ export default class MyTable extends React.Component {
 	}
 	render(){
 		
-		var listRow = this.props.arr.map((el, index) => (<MyRow key={index} data={el} deleteRow={this.props.deleteRow}/>));
+		var listRow = this.props.arr.map((el, index) => 
+			(<MyRow 
+				key={el.id}
+				
+				data={el} 
+				editRow={this.props.editRow} 
+				deleteRow={this.props.deleteRow} />
+			)
+		);
 		return (
 			<table className="table is-striped">
 				<thead>

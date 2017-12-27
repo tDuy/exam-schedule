@@ -6,11 +6,11 @@ import AddRow from './AddRow.jsx';
 
 
 var arr = [
-			{name: "Phuc", subject: "Toan"},
-			{name: "Phuc", subject: "Van"},
-			{name: "Phuc", subject: "Su"},
-			{name: "Truc", subject: "Toan"},
-			{name: "Truc", subject: "Anh"},
+			{id: 0, name: "Phuc", subject: "Toan"},
+			{id: 1, name: "Phuc", subject: "Van"},
+			{id: 2, name: "Phuc", subject: "Su"},
+			{id: 3, name: "Truc", subject: "Toan"},
+			{id: 4, name: "Truc", subject: "Anh"},
 		];
 
 class App extends React.Component {
@@ -19,35 +19,45 @@ class App extends React.Component {
 		this.state = {list: arr};
 		this.addRowHandler = this.addRowHandler.bind(this);
 		this.delRowHandler = this.delRowHandler.bind(this);
+		this.editRowHandler = this.editRowHandler.bind(this);
 	}
 	addRowHandler(obj){
-		var arr = this.state.list.concat(obj);
+		var id = new Date().getTime();
+		var arr = this.state.list.concat({id: id, name: obj.name, subject: obj.subject });
 		this.setState({list: arr});
 	}
-	delRowHandler(obj){
+	editRowHandler(obj){
 		var arr = this.state.list;
-		var s2 = JSON.stringify(obj);
-		var index;
-
-		for(let i=0; i<arr; i++){
-		  let s1 = JSON.stringify(arr[i]);
-		  console.log(s1);
-		  if(s2 === s1){
-		  	// index = i;
-		  	arr.splice(i, 1);
-		  	break;
-		  }
+		for(let i=0; i<arr.length; i++){
+			if(arr[i].id === obj.id){
+				arr[i] = obj;
+				break;
+			}
+		}
+		this.setState({list: arr});
+	}
+	delRowHandler(id){
+		var arr = this.state.list;
+		
+		for(let i=0; i<arr.length; i++){
+			if(arr[i].id === id){
+				arr.splice(i, 1);
+				break;
+			}
 		}
 		
-
 		this.setState({list: arr});
 	}
 	render(){
 		return (
-			<div>
-				
-				<MyTable arr={this.state.list}  deleteRow={this.delRowHandler}/>
-				<AddRow createRow={this.addRowHandler} />
+			<div className="columns">
+				<div className="column">
+					<MyTable arr={this.state.list} editRow={this.editRowHandler} deleteRow={this.delRowHandler}/>
+					<AddRow createRow={this.addRowHandler} />
+				</div>
+				<div className="column">
+					<h1>Result</h1>
+				</div>
 			</div>
 		);
 	}

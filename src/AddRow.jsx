@@ -9,18 +9,18 @@ export default class AddRow extends React.Component {
 		e.preventDefault();
 		var form = document.forms.AddRowForm;
 		this.props.createRow({
-			name: form.name.value,
-			subject: form.subject.value
+			name: form.newName.value,
+			subject: form.newSubject.value
 		});
 
-		form.name.value = "";
-		form.subject.value = "";
+		form.newName.value = "";
+		form.newSubject.value = "";
 	}
 	render(){
 		return (
 			<form onSubmit={this.onSubmit} name="AddRowForm">
-				<input type="text" name="name" placeholder="Name" />
-				<input type="text" name="subject" placeholder="Subject" />
+				<input type="text" name="newName" placeholder="Name" />
+				<input type="text" name="newSubject" placeholder="Subject" />
 				<input type="submit" name="submit" />
 			</form>
 		);
