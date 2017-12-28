@@ -1,14 +1,14 @@
 webpackJsonp([0],{
 
-/***/ 15:
+/***/ 19:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(16);
+module.exports = __webpack_require__(20);
 
 
 /***/ }),
 
-/***/ 16:
+/***/ 20:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16,29 +16,33 @@ module.exports = __webpack_require__(16);
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(1);
+var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = __webpack_require__(8);
+var _reactDom = __webpack_require__(9);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _MyTable = __webpack_require__(28);
+var _MyTable = __webpack_require__(32);
 
 var _MyTable2 = _interopRequireDefault(_MyTable);
 
-var _AddRow = __webpack_require__(30);
+var _AddRow = __webpack_require__(34);
 
 var _AddRow2 = _interopRequireDefault(_AddRow);
 
-var _ResultTable = __webpack_require__(33);
+var _ResultTable = __webpack_require__(35);
 
 var _ResultTable2 = _interopRequireDefault(_ResultTable);
 
-var _Graph = __webpack_require__(32);
+var _Graph = __webpack_require__(37);
 
 var _Graph2 = _interopRequireDefault(_Graph);
+
+var _UploadFile = __webpack_require__(38);
+
+var _UploadFile2 = _interopRequireDefault(_UploadFile);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -137,7 +141,8 @@ var App = function (_React$Component) {
 							{ className: 'button is-primary', onClick: this.execute },
 							'Calculate'
 						)
-					)
+					),
+					_react2.default.createElement(_UploadFile2.default, null)
 				),
 				_react2.default.createElement(
 					'div',
@@ -161,7 +166,7 @@ _reactDom2.default.render(_react2.default.createElement(App, null), rootNode);
 
 /***/ }),
 
-/***/ 28:
+/***/ 32:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -173,11 +178,11 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(1);
+var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _MyRow = __webpack_require__(29);
+var _MyRow = __webpack_require__(33);
 
 var _MyRow2 = _interopRequireDefault(_MyRow);
 
@@ -253,7 +258,7 @@ exports.default = MyTable;
 
 /***/ }),
 
-/***/ 29:
+/***/ 33:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -265,7 +270,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(1);
+var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -391,7 +396,7 @@ exports.default = MyRow;
 
 /***/ }),
 
-/***/ 30:
+/***/ 34:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -403,7 +408,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(1);
+var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -502,7 +507,149 @@ exports.default = AddRow;
 
 /***/ }),
 
-/***/ 32:
+/***/ 35:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _ResultRow = __webpack_require__(36);
+
+var _ResultRow2 = _interopRequireDefault(_ResultRow);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ResultTable = function (_React$Component) {
+    _inherits(ResultTable, _React$Component);
+
+    function ResultTable(props) {
+        _classCallCheck(this, ResultTable);
+
+        return _possibleConstructorReturn(this, (ResultTable.__proto__ || Object.getPrototypeOf(ResultTable)).call(this, props));
+    }
+
+    _createClass(ResultTable, [{
+        key: 'render',
+        value: function render() {
+            var listRow = this.props.arr.map(function (el) {
+                return _react2.default.createElement(_ResultRow2.default, { key: el.id, data: el });
+            });
+            var keys = Object.keys(this.props.arr[0]);
+            keys.splice(keys.indexOf('id'), 1);
+            var listTh = keys.map(function (key, index) {
+                return _react2.default.createElement(
+                    'th',
+                    { key: index },
+                    key.charAt(0).toUpperCase() + key.slice(1)
+                );
+            });
+            return _react2.default.createElement(
+                'table',
+                { className: 'table is-hoverable' },
+                _react2.default.createElement(
+                    'thead',
+                    null,
+                    _react2.default.createElement(
+                        'tr',
+                        null,
+                        listTh
+                    )
+                ),
+                _react2.default.createElement(
+                    'tbody',
+                    null,
+                    listRow
+                )
+            );
+        }
+    }]);
+
+    return ResultTable;
+}(_react2.default.Component);
+
+exports.default = ResultTable;
+
+/***/ }),
+
+/***/ 36:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ResultRow = function (_React$Component) {
+    _inherits(ResultRow, _React$Component);
+
+    function ResultRow(props) {
+        _classCallCheck(this, ResultRow);
+
+        return _possibleConstructorReturn(this, (ResultRow.__proto__ || Object.getPrototypeOf(ResultRow)).call(this, props));
+    }
+
+    _createClass(ResultRow, [{
+        key: 'render',
+        value: function render() {
+            var _this2 = this;
+
+            var keys = Object.keys(this.props.data);
+            keys.splice(keys.indexOf('id'), 1);
+            var list = keys.map(function (key, index) {
+                return _react2.default.createElement(
+                    'td',
+                    { key: index },
+                    _this2.props.data[key]
+                );
+            });
+            return _react2.default.createElement(
+                'tr',
+                null,
+                list
+            );
+        }
+    }]);
+
+    return ResultRow;
+}(_react2.default.Component);
+
+exports.default = ResultRow;
+
+/***/ }),
+
+/***/ 37:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -618,7 +765,7 @@ class Graph {
 
 /***/ }),
 
-/***/ 33:
+/***/ 38:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -630,13 +777,13 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(1);
+var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _ResultRow = __webpack_require__(34);
+var _xlsx = __webpack_require__(16);
 
-var _ResultRow2 = _interopRequireDefault(_ResultRow);
+var _xlsx2 = _interopRequireDefault(_xlsx);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -646,119 +793,101 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var ResultTable = function (_React$Component) {
-    _inherits(ResultTable, _React$Component);
+var UploadFile = function (_React$Component) {
+    _inherits(UploadFile, _React$Component);
 
-    function ResultTable(props) {
-        _classCallCheck(this, ResultTable);
+    function UploadFile(props) {
+        _classCallCheck(this, UploadFile);
 
-        return _possibleConstructorReturn(this, (ResultTable.__proto__ || Object.getPrototypeOf(ResultTable)).call(this, props));
+        var _this = _possibleConstructorReturn(this, (UploadFile.__proto__ || Object.getPrototypeOf(UploadFile)).call(this, props));
+
+        _this.displayFileName = _this.displayFileName.bind(_this);
+        // this.onClick = this.onClick.bind(this);
+        return _this;
     }
 
-    _createClass(ResultTable, [{
+    _createClass(UploadFile, [{
+        key: 'displayFileName',
+        value: function displayFileName(e) {
+            var file = document.getElementById('file');
+            if (file.files.length > 0) {
+                var fileName = document.getElementById('filename');
+                fileName.innerText = file.files[0].name;
+            }
+
+            var rABS = true; // true: readAsBinaryString ; false: readAsArrayBuffer
+
+            var files = e.target.files,
+                f = files[0];
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                var data = e.target.result;
+                if (!rABS) data = new Uint8Array(data);
+                var workbook = _xlsx2.default.read(data, { type: rABS ? 'binary' : 'array' });
+
+                /* DO SOMETHING WITH workbook HERE */
+                /* generate XLSX as base64 string */
+                var b64 = _xlsx2.default.write(workbook, { bookType: 'xlsx', type: 'base64' });
+
+                /* build FormData with the generated file */
+                var fd = new FormData();
+                fd.append('data', b64);
+
+                /* send data */
+                var req = new XMLHttpRequest();
+                req.open("POST", "/api/upload", true);
+                req.send(fd);
+            };
+            if (rABS) reader.readAsBinaryString(f);else reader.readAsArrayBuffer(f);
+        }
+        // onClick(){
+
+        // }
+
+    }, {
         key: 'render',
         value: function render() {
-            var listRow = this.props.arr.map(function (el) {
-                return _react2.default.createElement(_ResultRow2.default, { key: el.id, data: el });
-            });
-            var keys = Object.keys(this.props.arr[0]);
-            keys.splice(keys.indexOf('id'), 1);
-            var listTh = keys.map(function (key, index) {
-                return _react2.default.createElement(
-                    'th',
-                    { key: index },
-                    key.charAt(0).toUpperCase() + key.slice(1)
-                );
-            });
             return _react2.default.createElement(
-                'table',
-                { className: 'table is-hoverable' },
+                'div',
+                { className: 'box' },
                 _react2.default.createElement(
-                    'thead',
-                    null,
+                    'div',
+                    { className: 'file' },
                     _react2.default.createElement(
-                        'tr',
-                        null,
-                        listTh
+                        'label',
+                        { className: 'file-label' },
+                        _react2.default.createElement('input', { id: 'file', className: 'file-input', type: 'file', name: 'resume', onChange: this.displayFileName }),
+                        _react2.default.createElement(
+                            'span',
+                            { className: 'file-cta' },
+                            _react2.default.createElement(
+                                'span',
+                                { className: 'file-icon' },
+                                _react2.default.createElement('i', { className: 'fa fa-upload' })
+                            ),
+                            _react2.default.createElement(
+                                'span',
+                                { className: 'file-label', id: 'filename' },
+                                'Choose a file\u2026'
+                            )
+                        )
+                    ),
+                    _react2.default.createElement(
+                        'button',
+                        { className: 'button' },
+                        'Upload'
                     )
-                ),
-                _react2.default.createElement(
-                    'tbody',
-                    null,
-                    listRow
                 )
             );
         }
     }]);
 
-    return ResultTable;
+    return UploadFile;
 }(_react2.default.Component);
 
-exports.default = ResultTable;
-
-/***/ }),
-
-/***/ 34:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(1);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var ResultRow = function (_React$Component) {
-    _inherits(ResultRow, _React$Component);
-
-    function ResultRow(props) {
-        _classCallCheck(this, ResultRow);
-
-        return _possibleConstructorReturn(this, (ResultRow.__proto__ || Object.getPrototypeOf(ResultRow)).call(this, props));
-    }
-
-    _createClass(ResultRow, [{
-        key: 'render',
-        value: function render() {
-            var _this2 = this;
-
-            var keys = Object.keys(this.props.data);
-            keys.splice(keys.indexOf('id'), 1);
-            var list = keys.map(function (key, index) {
-                return _react2.default.createElement(
-                    'td',
-                    { key: index },
-                    _this2.props.data[key]
-                );
-            });
-            return _react2.default.createElement(
-                'tr',
-                null,
-                list
-            );
-        }
-    }]);
-
-    return ResultRow;
-}(_react2.default.Component);
-
-exports.default = ResultRow;
+exports.default = UploadFile;
 
 /***/ })
 
-},[15]);
+},[19]);
 //# sourceMappingURL=app.bundle.js.map

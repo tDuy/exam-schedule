@@ -21,7 +21,9 @@
     "url": "https://github.com/tDuy/exam-schedule.git"
   },
   "dependencies": {
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "express-formidable": "^1.0.0",
+    "xlsx": "^0.11.15"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

@@ -7,6 +7,8 @@ import AddRow from './AddRow.jsx';
 import ResultTable from './ResultTable.jsx';
 import Graph from './Graph.js';
 
+import UploadFile from './UploadFile.jsx';
+
 var arr = [
 			{id: 0, name: "Phuc", subject: "Toan"},
 			{id: 1, name: "Phuc", subject: "Van"},
@@ -74,7 +76,8 @@ class App extends React.Component {
 				
 							<button className="button is-primary" onClick={this.execute}>Calculate</button>
 						
-					</div>	
+					</div>
+					<UploadFile />
 				</div>
 				<div className="column">
 					<h1 className="title is-4">Result</h1>

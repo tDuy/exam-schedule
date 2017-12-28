@@ -3,7 +3,7 @@ const webpack = require('webpack');
 module.exports = {
   entry: {
     app: ["./src/App.jsx"],
-    vendor: ['react', 'react-dom',]
+    vendor: ['react', 'react-dom', 'xlsx']
   },
   output: {
       path: __dirname + "/static",
