@@ -17,7 +17,7 @@ export default class MyTable extends React.Component {
 			)
 		);
 		return (
-			<table className="table is-striped">
+			<table className="table is-striped is-fullwidth">
 				<thead>
 					<tr>
 						<th>Name</th>

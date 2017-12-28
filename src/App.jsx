@@ -4,6 +4,8 @@ import ReactDOM from 'react-dom';
 import MyTable from './MyTable.jsx';
 import AddRow from './AddRow.jsx';
 
+import ResultTable from './ResultTable.jsx';
+import Graph from './Graph.js';
 
 var arr = [
 			{id: 0, name: "Phuc", subject: "Toan"},
@@ -16,10 +18,12 @@ var arr = [
 class App extends React.Component {
 	constructor(props){
 		super(props);
-		this.state = {list: arr};
+		this.state = {list: arr, exe: false, result: []};
 		this.addRowHandler = this.addRowHandler.bind(this);
 		this.delRowHandler = this.delRowHandler.bind(this);
 		this.editRowHandler = this.editRowHandler.bind(this);
+		
+		this.execute = this.execute.bind(this);
 	}
 	addRowHandler(obj){
 		var id = new Date().getTime();
@@ -48,15 +52,33 @@ class App extends React.Component {
 		
 		this.setState({list: arr});
 	}
+	execute(){
+		var myGraph = Graph.fromArr(this.state.list);
+		var labels = myGraph.coloring();
+		// console.log(labels);
+		
+		var result = myGraph.subjects.map((sub, index) => {
+			return {id: index, subject: sub, label: labels[index] };
+		});
+		
+		this.setState({ exe: true, result: result});
+	}
 	render(){
 		return (
-			<div className="columns">
+			<div className="container columns">
 				<div className="column">
+					<h1 className="title is-4">Input</h1>
 					<MyTable arr={this.state.list} editRow={this.editRowHandler} deleteRow={this.delRowHandler}/>
 					<AddRow createRow={this.addRowHandler} />
+					<div className="">
+				
+							<button className="button is-primary" onClick={this.execute}>Calculate</button>
+						
+					</div>	
 				</div>
 				<div className="column">
-					<h1>Result</h1>
+					<h1 className="title is-4">Result</h1>
+					{this.state.exe && <ResultTable arr={this.state.result} /> }
 				</div>
 			</div>
 		);
