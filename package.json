@@ -4,7 +4,7 @@
   "description": "time schedule project",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon -w server.js server.js",
+    "start": "node server.js",
     "compile": "webpack",
     "watch": "webpack --watch",
     "dev": "nodemon -w server.js server.js & webpack --watch"
