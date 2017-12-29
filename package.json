@@ -12,8 +12,10 @@
   },
   "keywords": [
     "node",
-    "graph",
-    "coloring"
+    "graph coloring",
+    "react",
+    "excel",
+    "bulma"
   ],
   "author": "Duy Tu",
   "license": "ISC",
