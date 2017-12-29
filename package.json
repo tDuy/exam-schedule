@@ -4,10 +4,11 @@
   "description": "time schedule project",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon -w server.js server.js",
+    "start": "node server.js",
+    "build": "webpack --config webpack.prod.js",
     "compile": "webpack",
     "watch": "webpack --watch",
-    "dev": "nodemon -w server.js server.js & webpack --watch"
+    "dev": "nodemon -w server.js -w server server.js & webpack --watch"
   },
   "keywords": [
     "node",
@@ -34,6 +35,8 @@
     "nodemon": "^1.14.3",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "webpack": "^3.10.0"
+    "uglifyjs-webpack-plugin": "^1.1.5",
+    "webpack": "^3.10.0",
+    "webpack-merge": "^4.1.1"
   }
 }

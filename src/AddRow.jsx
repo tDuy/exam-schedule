@@ -52,7 +52,7 @@ export default class AddRow extends React.Component {
 				</div>
 				<div className="field">
 					<div className="control">	
-						<input className="button is-info is-outlined" type="submit" name="submit" value="Add"/>
+						<input className="button is-primary is-outlined" type="submit" name="submit" value="Add"/>
 					</div>
 				</div>
 			</form>

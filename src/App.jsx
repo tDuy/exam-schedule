@@ -67,23 +67,29 @@ class App extends React.Component {
 	}
 	render(){
 		return (
-			<div className="container columns">
+		<div className="container">	
+			<div className="columns">
 				<div className="column">
 					<h1 className="title is-4">Input</h1>
 					<MyTable arr={this.state.list} editRow={this.editRowHandler} deleteRow={this.delRowHandler}/>
-					<AddRow createRow={this.addRowHandler} />
-					<div className="">
-				
-							<button className="button is-primary" onClick={this.execute}>Calculate</button>
-						
-					</div>
-					<UploadFile />
 				</div>
 				<div className="column">
 					<h1 className="title is-4">Result</h1>
 					{this.state.exe && <ResultTable arr={this.state.result} /> }
 				</div>
 			</div>
+			<div className="columns">
+				<div className="column">
+					<AddRow createRow={this.addRowHandler} />
+					<div className="">
+						<button className="button is-primary" onClick={this.execute}>Calculate</button>
+					</div>
+				</div>
+				<div className="column">
+					<UploadFile />
+				</div>
+			</div>
+		</div>
 		);
 	}
 }
